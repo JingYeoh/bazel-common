@@ -20,6 +20,7 @@ _MAVEN_MIRRORS = [
     "http://bazel-mirror.storage.googleapis.com/repo1.maven.org/maven2/",
     "http://repo1.maven.org/maven2/",
     "https://mvnrepository.com/artifact/",
+    "https://repo1.maven.org/maven2/",
 ]
 
 def _maven_import(artifact, sha256, licenses, **kwargs):
@@ -401,4 +402,10 @@ def google_common_workspace_rules():
         artifact = "com.googlecode.java-diff-utils:diffutils:1.3.0",
         licenses = ["notice"],
         sha256 = "61ba4dc49adca95243beaa0569adc2a23aedb5292ae78aa01186fa782ebdc5c2",
+    )
+
+    http_archive(
+        name = "rules_python",
+        url = "https://github.com/bazelbuild/rules_python/releases/download/0.0.1/rules_python-0.0.1.tar.gz",
+        sha256 = "aa96a691d3a8177f3215b14b0edc9641787abaaa30363a080165d06ab65e1161",
     )
