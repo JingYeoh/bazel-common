@@ -19,7 +19,7 @@ load("@bazel_tools//tools/build_defs/repo:java.bzl", "java_import_external")
 _MAVEN_MIRRORS = [
     "http://bazel-mirror.storage.googleapis.com/repo1.maven.org/maven2/",
     "http://repo1.maven.org/maven2/",
-    "http://maven.ibiblio.org/maven2/",
+    "https://mvnrepository.com/",
 ]
 
 def _maven_import(artifact, sha256, licenses, **kwargs):
