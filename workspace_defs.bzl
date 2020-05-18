@@ -253,11 +253,10 @@ def google_common_workspace_rules():
         urls = ["https://github.com/google/protobuf/archive/v3.5.0.zip"],
     )
 
-    http_archive(
-        name = "com_google_protobuf_java",
-        sha256 = "cef7f1b5a7c5fba672bec2a319246e8feba471f04dcebfe362d55930ee7c1c30",
-        strip_prefix = "protobuf-3.5.0",
-        urls = ["https://github.com/google/protobuf/archive/v3.5.0.zip"],
+    _maven_import(
+        artifact = "com.google.protobuf:protobuf-java:3.7.0",
+        licenses = ["notice"],
+        sha256 = "dc7f93e3a3dc2c11be5ba9672af3e26410f0a3289312dbf2260d4d8a0c711a51",
     )
 
     CHECKER_FRAMEWORK_VERSION = "2.5.3"
