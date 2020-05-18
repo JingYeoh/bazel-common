@@ -246,14 +246,14 @@ def google_common_workspace_rules():
         sha256 = "49a3c7b3781d4b7b2d15063e125824260c9b46bdb62494b63b367b661fdb2b26",
     )
 
-    native.http_archive(
+    http_archive(
         name = "com_google_protobuf",
         sha256 = "cef7f1b5a7c5fba672bec2a319246e8feba471f04dcebfe362d55930ee7c1c30",
         strip_prefix = "protobuf-3.5.0",
         urls = ["https://github.com/google/protobuf/archive/v3.5.0.zip"],
     )
 
-    native.http_archive(
+    http_archive(
         name = "com_google_protobuf_java",
         sha256 = "cef7f1b5a7c5fba672bec2a319246e8feba471f04dcebfe362d55930ee7c1c30",
         strip_prefix = "protobuf-3.5.0",
@@ -389,11 +389,12 @@ def google_common_workspace_rules():
         sha256 = "c35697e7ad4bab018156cc3b75e8742f31fd8cad5bb9762f25bbf669ce01abce",
     )
 
-    skylib_version = "9430df29e4c648b95bf39a57e4336b44a0a0582a"
-    native.http_archive(
+    skylib_version = "0.9.0"
+    http_archive(
         name = "bazel_skylib",
         strip_prefix = "bazel-skylib-{}".format(skylib_version),
-        urls = ["https://github.com/bazelbuild/bazel-skylib/archive/{}.zip".format(skylib_version)],
+        url = "https://github.com/bazelbuild/bazel-skylib/archive/{}.tar.gz".format(skylib_version),
+        sha256 = "9245b0549e88e356cd6a25bf79f97aa19332083890b7ac6481a2affb6ada9752",
     )
 
     _maven_import(
