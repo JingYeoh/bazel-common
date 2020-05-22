@@ -247,6 +247,17 @@ def google_common_workspace_rules():
         sha256 = "49a3c7b3781d4b7b2d15063e125824260c9b46bdb62494b63b367b661fdb2b26",
     )
 
+    http_archive(
+        name = "zlib",
+        build_file = "@com_google_protobuf//:third_party/zlib.BUILD",
+        sha256 = "c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1",
+        strip_prefix = "zlib-1.2.11",
+        urls = [
+            "https://mirror.bazel.build/zlib.net/zlib-1.2.11.tar.gz",
+            "https://zlib.net/zlib-1.2.11.tar.gz",
+        ],
+    )
+
     for protobuf_repo in ("com_google_protobuf", "com_google_protobuf_java"):
         http_archive(
             name = protobuf_repo,
